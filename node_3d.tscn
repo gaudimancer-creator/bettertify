@@ -1,0 +1,491 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8q6yq4x2l3k"]
+
+[ext_resource type="Script" uid="uid://d408fwncokvm" path="res://node_3d.gd" id="1_a202f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a202f"]
+bg_color = Color(0.18695441, 0.23048684, 0.12447215, 1)
+shadow_size = 2
+shadow_offset = Vector2(1.58, 1.315)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_noarx"]
+bg_color = Color(0.049651906, 0.06838125, 0.024414, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0tk4"]
+bg_color = Color(0.44148475, 0.34561428, 0.19221866, 1)
+shadow_size = 2
+shadow_offset = Vector2(1.58, 1.315)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3fl7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 1365
+corner_radius_top_right = 360
+corner_radius_bottom_right = 230
+corner_radius_bottom_left = 2030
+shadow_color = Color(0, 0, 0, 0.1254902)
+shadow_size = 1
+
+[sub_resource type="Gradient" id="Gradient_jka67"]
+offsets = PackedFloat32Array(0, 0.41333333, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.49411765, 0.8117647, 0.49411765, 1, 0, 0.1660966, 0.16771856, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i5arm"]
+gradient = SubResource("Gradient_jka67")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wc5p8"]
+texture = SubResource("GradientTexture2D_i5arm")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsk3o"]
+bg_color = Color(0.08976232, 0.21267053, 0.09248435, 1)
+corner_radius_top_left = 15
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4arys"]
+content_margin_left = 10.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_a202f"]
+Button/styles/hover = SubResource("StyleBoxFlat_a202f")
+Button/styles/normal = SubResource("StyleBoxFlat_noarx")
+Button/styles/pressed = SubResource("StyleBoxFlat_a0tk4")
+Label/styles/normal = SubResource("StyleBoxFlat_r3fl7")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_wc5p8")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_jsk3o")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_4arys")
+
+[node name="SoundCloudPlayer" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("1_a202f")
+
+[node name="HttpApi" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[node name="HttpStreamResolver" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[node name="HttpDownloader" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="MainPanel" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a202f")
+
+[node name="MainVBox" type="VBoxContainer" parent="CanvasLayer/MainPanel"]
+layout_mode = 2
+
+[node name="ContentMargin" type="MarginContainer" parent="CanvasLayer/MainPanel/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 35
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+current_tab = 0
+
+[node name="Recherche" type="VBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HBoxSearch" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche"]
+layout_mode = 2
+
+[node name="InputSearch" type="LineEdit" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxSearch"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Titre, Artiste..."
+
+[node name="BtnSearch" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxSearch"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rechercher"
+
+[node name="ListResults" type="ItemList" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxActions" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche"]
+layout_mode = 2
+
+[node name="BtnLoadMore" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Charger plus"
+
+[node name="BtnViewArtist" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Profil de l'artiste"
+
+[node name="BtnAddTo" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ajouter à..."
+
+[node name="PopupAddToPlaylist" type="PopupMenu" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions/BtnAddTo"]
+unique_name_in_owner = true
+oversampling_override = 1.0
+position = Vector2i(235, 465)
+visible = true
+max_size = Vector2i(16384, 290)
+
+[node name="Bibliothèque" type="VBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="HBoxSel" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxSel"]
+layout_mode = 2
+text = "Playlist :"
+
+[node name="OptionPlaylistSelect" type="OptionButton" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxSel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxCreate" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque"]
+layout_mode = 2
+
+[node name="InputNewPlaylist" type="LineEdit" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxCreate"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Nom de la nouvelle playlist..."
+
+[node name="BtnCreatePlaylist" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxCreate"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Créer"
+
+[node name="HBoxPlActions" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque"]
+layout_mode = 2
+
+[node name="BtnDeletePlaylist" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxPlActions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Supprimer la playlist"
+
+[node name="BtnShare" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxPlActions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exporter"
+
+[node name="BtnImport" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxPlActions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Importer"
+
+[node name="BtnAddLocal" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxPlActions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ajouter Fichier Local"
+
+[node name="ListPlaylist" type="ItemList" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxTrackActions" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque"]
+layout_mode = 2
+
+[node name="HBoxActions2" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions"]
+layout_mode = 2
+
+[node name="BtnLoadMore" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2"]
+layout_mode = 2
+disabled = true
+text = "Charger plus"
+
+[node name="BtnViewArtist" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2"]
+layout_mode = 2
+text = "Profil de l'artiste"
+
+[node name="BtnAddTo" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2"]
+layout_mode = 2
+text = "Ajouter à..."
+
+[node name="PopupAddToPlaylist" type="PopupMenu" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2/BtnAddTo"]
+oversampling_override = 1.0
+position = Vector2i(235, 465)
+visible = true
+max_size = Vector2i(16384, 290)
+
+[node name="BtnDeleteTrack" type="Button" parent="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Supprimer le titre sélectionné"
+
+[node name="BottomBarPanel" type="PanelContainer" parent="CanvasLayer/MainPanel/MainVBox"]
+layout_mode = 2
+
+[node name="HBoxBottom" type="HBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="BtnPrev" type="Button" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "⏮"
+
+[node name="BtnPlayPause" type="Button" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(22, 62)
+layout_mode = 2
+text = "⏸"
+
+[node name="BtnNext" type="Button" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "⏭"
+
+[node name="BtnLoop" type="Button" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(101, 0)
+layout_mode = 2
+text = "⏸ Désactivé"
+
+[node name="BtnAnnotations" type="Button" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "📝 Notes/Repères"
+
+[node name="VBoxSeek" type="VBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LblTime" type="Label" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxSeek"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0:00 / 0:00"
+horizontal_alignment = 1
+
+[node name="SliderSeek" type="HSlider" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxSeek"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxVol" type="VBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="SliderVolume" type="HSlider" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxVol"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.05
+value = 0.801
+
+[node name="Label" type="Label" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxVol"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="VBoxSpeed" type="VBoxContainer" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="LblSpeed" type="Label" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxSpeed"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Vitesse: 1.0x"
+horizontal_alignment = 1
+
+[node name="SliderSpeed" type="HSlider" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxSpeed"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 0.5
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+autowrap_mode = 3
+
+[node name="FileDialogLocal" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open File(s)"
+initial_position = 2
+size = Vector2i(600, 400)
+ok_button_text = "Ouvrir"
+file_mode = 1
+access = 2
+filters = PackedStringArray("*.mp3, *.ogg, *.wav ; Fichiers audio")
+use_native_dialog = true
+
+[node name="WindowAnnotations" type="Window" parent="."]
+unique_name_in_owner = true
+title = "Annotations et repères"
+initial_position = 2
+size = Vector2i(400, 500)
+visible = false
+
+[node name="Panel" type="PanelContainer" parent="WindowAnnotations"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="WindowAnnotations/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="WindowAnnotations/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelNote" type="Label" parent="WindowAnnotations/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Note Personnelle :"
+
+[node name="InputNote" type="TextEdit" parent="WindowAnnotations/Panel/Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+placeholder_text = "Écrivez votre avis sur le titre ici..."
+
+[node name="BtnSaveNote" type="Button" parent="WindowAnnotations/Panel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "💾 Sauvegarder Note"
+
+[node name="HSeparator" type="HSeparator" parent="WindowAnnotations/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="LabelCue" type="Label" parent="WindowAnnotations/Panel/Margin/VBox"]
+layout_mode = 2
+text = "Points de repère :"
+
+[node name="HBoxCue" type="HBoxContainer" parent="WindowAnnotations/Panel/Margin/VBox"]
+layout_mode = 2
+
+[node name="InputCueTime" type="LineEdit" parent="WindowAnnotations/Panel/Margin/VBox/HBoxCue"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Sec (ex: 65)"
+
+[node name="BtnGetTime" type="Button" parent="WindowAnnotations/Panel/Margin/VBox/HBoxCue"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Prendre le temps actuel"
+text = "⏱"
+
+[node name="InputCueLabel" type="LineEdit" parent="WindowAnnotations/Panel/Margin/VBox/HBoxCue"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Nom du repère"
+
+[node name="BtnAddCue" type="Button" parent="WindowAnnotations/Panel/Margin/VBox/HBoxCue"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+"
+
+[node name="ListCues" type="ItemList" parent="WindowAnnotations/Panel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BtnDelCue" type="Button" parent="WindowAnnotations/Panel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Supprimer le repère sélectionné"
+
+[node name="PopupImportDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+title = "Importer une playlist"
+initial_position = 2
+size = Vector2i(400, 300)
+
+[node name="VBox" type="VBoxContainer" parent="PopupImportDialog"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 251.0
+
+[node name="Label" type="Label" parent="PopupImportDialog/VBox"]
+layout_mode = 2
+text = "Collez le code de la playlist :"
+
+[node name="InputImportCode" type="TextEdit" parent="PopupImportDialog/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+wrap_mode = 1
+
+[connection signal="request_completed" from="HttpApi" to="." method="_on_search_completed"]
+[connection signal="request_completed" from="HttpStreamResolver" to="." method="_on_stream_resolved"]
+[connection signal="request_completed" from="HttpDownloader" to="." method="_on_mp3_downloaded"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_track_finished"]
+[connection signal="text_submitted" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxSearch/InputSearch" to="." method="_on_search_submitted"]
+[connection signal="item_activated" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/ListResults" to="." method="_on_search_item_selected"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions/BtnLoadMore" to="." method="_on_load_more_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions/BtnViewArtist" to="." method="_on_view_artist_profile_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions/BtnAddTo" to="." method="_on_add_playlist_pressed"]
+[connection signal="id_pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Recherche/HBoxActions/BtnAddTo/PopupAddToPlaylist" to="." method="_on_add_to_playlist_confirm"]
+[connection signal="item_selected" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxSel/OptionPlaylistSelect" to="." method="_on_playlist_view_changed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxCreate/BtnCreatePlaylist" to="." method="_create_new_playlist"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxPlActions/BtnDeletePlaylist" to="." method="_delete_current_playlist"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxPlActions/BtnShare" to="." method="_share_current_playlist"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxPlActions/BtnImport" to="." method="_open_import_popup"]
+[connection signal="item_activated" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/ListPlaylist" to="." method="_on_playlist_item_selected"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2/BtnLoadMore" to="." method="_on_load_more_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2/BtnViewArtist" to="." method="_on_view_artist_profile_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2/BtnAddTo" to="." method="_on_add_playlist_pressed"]
+[connection signal="id_pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/HBoxActions2/BtnAddTo/PopupAddToPlaylist" to="." method="_on_add_to_playlist_confirm"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/ContentMargin/TabContainer/Bibliothèque/HBoxTrackActions/BtnDeleteTrack" to="." method="_delete_selected_track"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/BtnPrev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/BtnPlayPause" to="." method="_on_play_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/BtnNext" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/BtnLoop" to="." method="_on_loop_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/BtnAnnotations" to="." method="_open_annotation_window"]
+[connection signal="drag_ended" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxSeek/SliderSeek" to="." method="_on_seek_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxVol/SliderVolume" to="." method="_on_volume_changed"]
+[connection signal="value_changed" from="CanvasLayer/MainPanel/MainVBox/BottomBarPanel/HBoxBottom/VBoxSpeed/SliderSpeed" to="." method="_on_speed_changed"]
+[connection signal="files_selected" from="FileDialogLocal" to="." method="_on_local_files_selected"]
+[connection signal="pressed" from="WindowAnnotations/Panel/Margin/VBox/BtnSaveNote" to="." method="_save_current_annotation"]
+[connection signal="pressed" from="WindowAnnotations/Panel/Margin/VBox/HBoxCue/BtnAddCue" to="." method="_add_cue_point"]
+[connection signal="item_activated" from="WindowAnnotations/Panel/Margin/VBox/ListCues" to="." method="_on_cue_activated"]
+[connection signal="pressed" from="WindowAnnotations/Panel/Margin/VBox/BtnDelCue" to="." method="_delete_selected_cue"]
+[connection signal="confirmed" from="PopupImportDialog" to="." method="_confirm_import_playlist"]
