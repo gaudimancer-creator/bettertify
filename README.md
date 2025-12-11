@@ -9,23 +9,23 @@ eyJuYW1lIjoibGVzIGNoYW5zb25zIMOgIMOpY291dGVyIGRlIHRvdXRlIHVyZ2VuY2UiLCJ0cmFja3Mi
 
 # Que peut faire BetterTify ?
 Pour l'heure, BetterTify est équipé de fonctionnalités plutôt basiques. La fonction de recherche permet de rechercher des titres dans l'API. Faites un double click pour les lire.
-<img width="1240" height="344" alt="{B71A09EA-A1CD-471E-AEC3-FBF3829B5509}" src="https://github.com/user-attachments/assets/da75fd38-6838-4898-a5d6-5df9060386d3" />
+<img width="1240" height="344" alt="{B71A09EA-A1CD-471E-AEC3-FBF3829B5509}" src="https://github.com/user-attachments/assets/da75fd38-6838-4898-a5d6-5df9060386d3" /> <br>
 En bas des résultats, quelques boutons existent, permettant de charger plus de résultats, charger le profil de l'artiste qui a publié le titre actuellement écouté, ou d'ajouter la musique actuelle à une playlist.
-<img width="362" height="54" alt="{3BD6820D-A317-4E02-9416-62E5402A0E99}" src="https://github.com/user-attachments/assets/a09517bf-f09b-437b-86dd-acec3bdc3e49" />
-Dans l'onglet Bibliothèque, vous avez accès à vos playlists.
+<img width="362" height="54" alt="{3BD6820D-A317-4E02-9416-62E5402A0E99}" src="https://github.com/user-attachments/assets/a09517bf-f09b-437b-86dd-acec3bdc3e49" /><br>
+Dans l'onglet Bibliothèque, vous avez accès à vos playlists.<br>
 Vous pouvez choisir la playlist dans laquelle vous êtes, créer une nouvelle playlist, exporter la playlist (ce qui copiera dans votre presse papier un code en base64), importer une playlist (avec un code en base64 dans votre presse papier), ou ajouter un fichier de votre ordinateur (comme précisé plus tôt).
-<img width="626" height="114" alt="{4836935A-DF34-47BB-B204-5715A25B819F}" src="https://github.com/user-attachments/assets/975540db-092c-4b04-80ca-c949db2dab3e" />
-en dessous se trouvent les titres de la playlist :
-<img width="1219" height="632" alt="{4669F60E-C1F3-421D-83E1-DC796046337C}" src="https://github.com/user-attachments/assets/e6c99637-3ac0-426d-86ba-3335896da99a" />
-Notez que les fichiers locaux portent une icône de dossier au début de leur nom. Les fichiers locaux ne sont pour le moment pas exportibles.
-<img width="403" height="24" alt="{BECFD0AC-0C02-463C-B386-87DFEB9F34F7}" src="https://github.com/user-attachments/assets/82fd9a20-f968-4b7a-a1ba-a0dfed7badc3" />
-Ensuite se trouvent les mêmes boutons qu'avec l'onglet Recherche ; ici cependant vous disposez d'un bouton supplémentaire, "Supprimer le titre sélectionné".
-<img width="591" height="61" alt="{9BD65237-BFCE-4D74-BB40-51C5C760CDE8}" src="https://github.com/user-attachments/assets/e50602e2-8de5-4c12-ac21-9e46a290f6bc" />
-La barre du bas est la plus importante, car elle vous permet de gérer votre lecture. Vous disposez d'un bouton pause, d'un bouton "Précédent", d'un bouton "Suivant", vous pouvez activer une boucle ou la désactiver, vous pouvez gérer et accéder à vos notes et repères (nous reviendrons sur ce point), définir votre emplacement dans la lecture du titre, définir un volume (qui sera conservé en mémoire pour la prochaine ouverture du programme), définir une vitesse de lecture (notez qu'elle s'accompagnera d'un changement de pitch) et visionner les messages système.
-<img width="1150" height="70" alt="{D0B30767-2C24-4A94-AFCE-9B781C9267F7}" src="https://github.com/user-attachments/assets/cf1410e2-faa9-4e5e-8d55-536432b1eed3" />
-Les notes permettent de noter des informations à propos d'une chanson. Les repères, eux, permettent de définir des moments importants dans la musique, auquel vous pouvez ensuite vous référer en un double click sur les repères souhaités.
-Clicker sur le bouton Notes/Repères vous amène à une nouvelle fenêtre (cela n'est possible que si le titre actuellement lu est dans une playlist) :
-<img width="425" height="542" alt="{95E5F981-0097-4EE0-9205-766DA7AE8F9A}" src="https://github.com/user-attachments/assets/e34f514e-b3d5-4673-a40e-bb61c86bfd30" />
-j'imagine que chaque bouton est assez parlant (outre le bouton d'horloge, qui vous permet d'obtenir les secondes du moment où vous êtes actuellement dans la musique, ce qui est pratique pour définir des repères sans devoir soi même convertir en secondes).
+<img width="626" height="114" alt="{4836935A-DF34-47BB-B204-5715A25B819F}" src="https://github.com/user-attachments/assets/975540db-092c-4b04-80ca-c949db2dab3e" /><br>
+en dessous se trouvent les titres de la playlist :<br>
+<img width="1219" height="632" alt="{4669F60E-C1F3-421D-83E1-DC796046337C}" src="https://github.com/user-attachments/assets/e6c99637-3ac0-426d-86ba-3335896da99a" /><br>
+Notez que les fichiers locaux portent une icône de dossier au début de leur nom. Les fichiers locaux ne sont pour le moment pas exportibles.<br>
+<img width="403" height="24" alt="{BECFD0AC-0C02-463C-B386-87DFEB9F34F7}" src="https://github.com/user-attachments/assets/82fd9a20-f968-4b7a-a1ba-a0dfed7badc3" /><br>
+Ensuite se trouvent les mêmes boutons qu'avec l'onglet Recherche ; ici cependant vous disposez d'un bouton supplémentaire, "Supprimer le titre sélectionné".<br>
+<img width="591" height="61" alt="{9BD65237-BFCE-4D74-BB40-51C5C760CDE8}" src="https://github.com/user-attachments/assets/e50602e2-8de5-4c12-ac21-9e46a290f6bc" /><br>
+La barre du bas est la plus importante, car elle vous permet de gérer votre lecture. Vous disposez d'un bouton pause, d'un bouton "Précédent", d'un bouton "Suivant", vous pouvez activer une boucle ou la désactiver, vous pouvez gérer et accéder à vos notes et repères (nous reviendrons sur ce point), définir votre emplacement dans la lecture du titre, définir un volume (qui sera conservé en mémoire pour la prochaine ouverture du programme), définir une vitesse de lecture (notez qu'elle s'accompagnera d'un changement de pitch) et visionner les messages système.<br>
+<img width="1150" height="70" alt="{D0B30767-2C24-4A94-AFCE-9B781C9267F7}" src="https://github.com/user-attachments/assets/cf1410e2-faa9-4e5e-8d55-536432b1eed3" /><br>
+Les notes permettent de noter des informations à propos d'une chanson. Les repères, eux, permettent de définir des moments importants dans la musique, auquel vous pouvez ensuite vous référer en un double click sur les repères souhaités.<br>
+Clicker sur le bouton Notes/Repères vous amène à une nouvelle fenêtre (cela n'est possible que si le titre actuellement lu est dans une playlist) :<br>
+<img width="425" height="542" alt="{95E5F981-0097-4EE0-9205-766DA7AE8F9A}" src="https://github.com/user-attachments/assets/e34f514e-b3d5-4673-a40e-bb61c86bfd30" /><br>
+j'imagine que chaque bouton est assez parlant (outre le bouton d'horloge, qui vous permet d'obtenir les secondes du moment où vous êtes actuellement dans la musique, ce qui est pratique pour définir des repères sans devoir soi même convertir en secondes).<br>
 
 
