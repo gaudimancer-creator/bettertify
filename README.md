@@ -1,7 +1,7 @@
 # bettertify
 Spotify... mais open source et plein de passion.
 
-BetterTify est basé sur l'API de Souncloud. L'API en question bloque certains titres célèbres mais ils sont tout de même trouvables par la recherche avec un peu de motivation. Si le projet plaît, je compte ajouter les titres de Spotify lui-même et de YouTube Music, avec une manière qui ne bloquera pas les titres célèbres. Si vous ne trouvez pas ce que vous cherchez, cherchez sur le web le fichier de la musique et choissisez d'importer un fichier local dans l'onglet Bibliothèque.
+BetterTify est basé sur l'API de Souncloud et est fabriqué avec le logiciel open source Godot. L'API en question bloque certains titres célèbres mais ils sont tout de même trouvables par la recherche avec un peu de motivation. Si le projet plaît, je compte ajouter les titres de Spotify lui-même et de YouTube Music, avec une manière qui ne bloquera pas les titres célèbres. Si vous ne trouvez pas ce que vous cherchez, cherchez sur le web le fichier de la musique et choissisez d'importer un fichier local dans l'onglet Bibliothèque.
 
 Pour démarrer votre aventure, voici un code d'import de playlist, qui contient quelques classiques comme les titres d'Abba, d'Eminem, un de Kamini, Stromae, etc.(oui, il est très long, il s'agit de base 64).
 
