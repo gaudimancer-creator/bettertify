@@ -36,5 +36,12 @@ Clicker sur le bouton Notes/Repères vous amène à une nouvelle fenêtre (cela 
 <img width="425" height="542" alt="{95E5F981-0097-4EE0-9205-766DA7AE8F9A}" src="https://github.com/user-attachments/assets/e34f514e-b3d5-4673-a40e-bb61c86bfd30" /><br>
 j'imagine que chaque bouton est assez parlant (outre le bouton d'horloge, qui vous permet d'obtenir les secondes du moment où vous êtes actuellement dans la musique, ce qui est pratique pour définir des repères sans devoir soi même convertir en secondes).<br>
 
-
+# Le futur de BetterTify ?
+Si ce projet de, pour le moment, faible envergure intéresse suffisamment de gens, voici ce que je prévois d'ajouter :
+- Une plus grande bibliothèque de titres
+- Des contrôles plus poussés (faire une boucle en choissisant deux repères, désactiver une musique d'une playlist pour qu'il n'y ait pas forcément le besoin de la supprimer tout de suite, etc.)
+- Un système de recommandations (qui fonctionne sans collecter vos données, calmez vous je m'appelle pas Google)
+- Un système de paroles
+- Création d'un serveur Discord
+- Proposez moi des idées sur ce GitHub !
 
