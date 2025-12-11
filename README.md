@@ -13,7 +13,7 @@ eyJuYW1lIjoibGVzIGNoYW5zb25zIMOgIMOpY291dGVyIGRlIHRvdXRlIHVyZ2VuY2UiLCJ0cmFja3Mi
 Le téléchargement est aisé et se fait par le téléchargement de ce .zip, qui contient le nécessaire pour les versions Windows et Linux.
 Vous pouvez supprimer la version qui ne correspond pas à votre système d'exploitation, mais gardez le .pck de votre version, sans quoi elle ne pourra pas de lancer.
 Je prévois, si ce projet plaît, d'ajouter le support pour Android. Peut-être aussi pour Mac et IPhone, mais dans ce cas il me faut des volontaires pour tester le fonctionnement sur ces plateformes.
-[Télécharger le .zip](https://file.garden/aPOZKJoGSn0LJJsU/BetterTify%20-%20Windows%20AND%20Linux%20Version.zip)
+## [Télécharger le .zip](https://file.garden/aPOZKJoGSn0LJJsU/BetterTify%20-%20Windows%20AND%20Linux%20Version.zip)
 
 # Que peut faire BetterTify ?
 Pour l'heure, BetterTify est équipé de fonctionnalités plutôt basiques. La fonction de recherche permet de rechercher des titres dans l'API. Faites un double click pour les lire.
