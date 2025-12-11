@@ -10,7 +10,7 @@ eyJuYW1lIjoibGVzIGNoYW5zb25zIMOgIMOpY291dGVyIGRlIHRvdXRlIHVyZ2VuY2UiLCJ0cmFja3Mi
 # Que peut faire BetterTify ?
 Pour l'heure, BetterTify est équipé de fonctionnalités plutôt basiques. La fonction de recherche permet de rechercher des titres dans l'API. Faites un double click pour les lire.
 <img width="1240" height="344" alt="{B71A09EA-A1CD-471E-AEC3-FBF3829B5509}" src="https://github.com/user-attachments/assets/da75fd38-6838-4898-a5d6-5df9060386d3" /> <br>
-En bas des résultats, quelques boutons existent, permettant de charger plus de résultats, charger le profil de l'artiste qui a publié le titre actuellement écouté, ou d'ajouter la musique actuelle à une playlist.
+En bas des résultats, quelques boutons existent, permettant de charger plus de résultats, charger le profil de l'artiste qui a publié le titre actuellement écouté, ou d'ajouter la musique actuelle à une playlist. <br>
 <img width="362" height="54" alt="{3BD6820D-A317-4E02-9416-62E5402A0E99}" src="https://github.com/user-attachments/assets/a09517bf-f09b-437b-86dd-acec3bdc3e49" /><br>
 Dans l'onglet Bibliothèque, vous avez accès à vos playlists.<br>
 Vous pouvez choisir la playlist dans laquelle vous êtes, créer une nouvelle playlist, exporter la playlist (ce qui copiera dans votre presse papier un code en base64), importer une playlist (avec un code en base64 dans votre presse papier), ou ajouter un fichier de votre ordinateur (comme précisé plus tôt).
