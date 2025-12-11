@@ -13,7 +13,7 @@ Pour l'heure, BetterTify est équipé de fonctionnalités plutôt basiques. La f
 En bas des résultats, quelques boutons existent, permettant de charger plus de résultats, charger le profil de l'artiste qui a publié le titre actuellement écouté, ou d'ajouter la musique actuelle à une playlist. <br>
 <img width="362" height="54" alt="{3BD6820D-A317-4E02-9416-62E5402A0E99}" src="https://github.com/user-attachments/assets/a09517bf-f09b-437b-86dd-acec3bdc3e49" /><br>
 Dans l'onglet Bibliothèque, vous avez accès à vos playlists.<br>
-Vous pouvez choisir la playlist dans laquelle vous êtes, créer une nouvelle playlist, exporter la playlist (ce qui copiera dans votre presse papier un code en base64), importer une playlist (avec un code en base64 dans votre presse papier), ou ajouter un fichier de votre ordinateur (comme précisé plus tôt).
+Vous pouvez choisir la playlist dans laquelle vous êtes, créer une nouvelle playlist, exporter la playlist (ce qui copiera dans votre presse papier un code en base64), importer une playlist (avec un code en base64 dans votre presse papier), ou ajouter un fichier de votre ordinateur (comme précisé plus tôt).<br>
 <img width="626" height="114" alt="{4836935A-DF34-47BB-B204-5715A25B819F}" src="https://github.com/user-attachments/assets/975540db-092c-4b04-80ca-c949db2dab3e" /><br>
 en dessous se trouvent les titres de la playlist :<br>
 <img width="1219" height="632" alt="{4669F60E-C1F3-421D-83E1-DC796046337C}" src="https://github.com/user-attachments/assets/e6c99637-3ac0-426d-86ba-3335896da99a" /><br>
